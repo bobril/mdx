@@ -27,3 +27,29 @@ export interface IMdxHeadingData extends IMdxData {
 export function mdxH(data: IMdxHeadingData, children?: b.IBobrilChildren): b.IBobrilChildren {
     return htmlElement("h" + data.level, data, children);
 }
+
+export function mdxUl(data: IMdxData, children?: b.IBobrilChildren): b.IBobrilChildren {
+    return htmlElement("ul", data, children);
+}
+
+export interface IMdxOrderedListData extends IMdxData {
+    type?: "a" | "A" | "i" | "I" | "1";
+    start?: number;
+}
+
+export function mdxOl(data: IMdxOrderedListData, children?: b.IBobrilChildren): b.IBobrilChildren {
+    var res = htmlElement("ol", data, children);
+    if (data.type) {
+        if (res.attrs == undefined) res.attrs = { type: data.type };
+        else res.attrs["type"] = data.type;
+    }
+    if (data.start != undefined) {
+        if (res.attrs == undefined) res.attrs = { start: data.start };
+        else res.attrs["start"] = data.start;
+    }
+    return res;
+}
+
+export function mdxLi(data: IMdxData, children?: b.IBobrilChildren): b.IBobrilChildren {
+    return htmlElement("li", data, children);
+}

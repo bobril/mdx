@@ -6,6 +6,9 @@ import * as c from "./src/components";
 export interface IMdxContext {
     P?: b.IComponentFactory<c.IMdxData>;
     H?: b.IComponentFactory<c.IMdxHeadingData>;
+    Ul?: b.IComponentFactory<c.IMdxData>;
+    Ol?: b.IComponentFactory<c.IMdxOrderedListData>;
+    Li?: b.IComponentFactory<c.IMdxData>;
 }
 
 export const mdxContext = b.createContext<IMdxContext>({}, "mdx");
@@ -16,4 +19,16 @@ export const P = (data: c.IMdxData, children?: b.IBobrilChildren) => {
 
 export const H = (data: c.IMdxHeadingData, children?: b.IBobrilChildren) => {
     return (b.useContext(mdxContext).H ?? c.mdxH)(data, children);
+};
+
+export const Ul = (data: c.IMdxData, children?: b.IBobrilChildren) => {
+    return (b.useContext(mdxContext).Ul ?? c.mdxUl)(data, children);
+};
+
+export const Ol = (data: c.IMdxOrderedListData, children?: b.IBobrilChildren) => {
+    return (b.useContext(mdxContext).Ol ?? c.mdxOl)(data, children);
+};
+
+export const Li = (data: c.IMdxData, children?: b.IBobrilChildren) => {
+    return (b.useContext(mdxContext).Li ?? c.mdxLi)(data, children);
 };
