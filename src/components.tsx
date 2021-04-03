@@ -5,8 +5,8 @@ export interface IMdxData extends b.IDataWithChildren {
     classes?: string[];
 }
 
-export function mdxP(data: IMdxData, children?: b.IBobrilChildren): b.IBobrilChildren {
-    var res = { tag: "p", children: children ?? data.children } as b.IBobrilNode;
+function htmlElement(tag: string, data: IMdxData, children?: b.IBobrilChildren) {
+    var res = { tag, children: children ?? data.children } as b.IBobrilNode;
     if (data.id) {
         res.attrs = { id: data.id };
     }
@@ -14,4 +14,16 @@ export function mdxP(data: IMdxData, children?: b.IBobrilChildren): b.IBobrilChi
         res.className = data.classes.join(" ");
     }
     return res;
+}
+
+export function mdxP(data: IMdxData, children?: b.IBobrilChildren): b.IBobrilChildren {
+    return htmlElement("p", data, children);
+}
+
+export interface IMdxHeadingData extends IMdxData {
+    level: number;
+}
+
+export function mdxH(data: IMdxHeadingData, children?: b.IBobrilChildren): b.IBobrilChildren {
+    return htmlElement("h" + data.level, data, children);
 }
