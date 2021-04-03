@@ -1,0 +1,27 @@
+{
+  "name": "@bobril/mdx",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bobril/mdx.git"
+  },
+  "keywords": [
+    "bobril",
+    "mdx"
+  ],
+  "prettier": {
+    "tabWidth": 4,
+    "printWidth": 120
+  },
+  "author": "Bobris",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bobril/mdx/issues"
+  },
+  "homepage": "https://github.com/bobril/mdx#readme",
+  "dependencies": {
+    "bobril": "*"
+  }
+}
