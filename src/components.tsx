@@ -116,3 +116,14 @@ export function mdxA(data: IMdxAData, children?: b.IBobrilChildren): b.IBobrilCh
 export function mdxBlockQuote(data: IMdxData, children?: b.IBobrilChildren): b.IBobrilChildren {
     return htmlElement("blockquote", data, children);
 }
+
+export interface IMdxAbbrData extends IMdxData {
+    title: string;
+}
+
+export function mdxAbbr(data: IMdxAbbrData, children?: b.IBobrilChildren): b.IBobrilChildren {
+    var res = htmlElement("abbr", data, children);
+    if (res.attrs == undefined) res.attrs = { title: data.title };
+    else res.attrs["title"] = data.title;
+    return res;
+}
