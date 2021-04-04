@@ -78,3 +78,37 @@ export function mdxStrong(data: IMdxData, children?: b.IBobrilChildren): b.IBobr
 export function mdxCode(data: IMdxData, children?: b.IBobrilChildren): b.IBobrilChildren {
     return htmlElement("code", data, children);
 }
+
+export interface IMdxImgData extends IMdxData {
+    src: string;
+    alt?: string;
+    title?: string;
+}
+
+export function mdxImg(data: IMdxImgData, children?: b.IBobrilChildren): b.IBobrilChildren {
+    var res = htmlElement("img", data, children);
+    if (res.attrs == undefined) res.attrs = { src: data.src };
+    else res.attrs["src"] = data.src;
+    if (data.alt) {
+        res.attrs["alt"] = data.alt;
+    }
+    if (data.title) {
+        res.attrs["title"] = data.title;
+    }
+    return res;
+}
+
+export interface IMdxAData extends IMdxData {
+    href: string;
+    title?: string;
+}
+
+export function mdxA(data: IMdxAData, children?: b.IBobrilChildren): b.IBobrilChildren {
+    var res = htmlElement("a", data, children);
+    if (res.attrs == undefined) res.attrs = { href: data.href };
+    else res.attrs["href"] = data.href;
+    if (data.title) {
+        res.attrs["title"] = data.title;
+    }
+    return res;
+}
