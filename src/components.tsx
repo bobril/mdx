@@ -75,6 +75,26 @@ export function mdxStrong(data: IMdxData, children?: b.IBobrilChildren): b.IBobr
     return htmlElement("strong", data, children);
 }
 
+export function mdxSup(data: IMdxData, children?: b.IBobrilChildren): b.IBobrilChildren {
+    return htmlElement("sup", data, children);
+}
+
+export function mdxSub(data: IMdxData, children?: b.IBobrilChildren): b.IBobrilChildren {
+    return htmlElement("sub", data, children);
+}
+
+export function mdxIns(data: IMdxData, children?: b.IBobrilChildren): b.IBobrilChildren {
+    return htmlElement("ins", data, children);
+}
+
+export function mdxDel(data: IMdxData, children?: b.IBobrilChildren): b.IBobrilChildren {
+    return htmlElement("del", data, children);
+}
+
+export function mdxMark(data: IMdxData, children?: b.IBobrilChildren): b.IBobrilChildren {
+    return htmlElement("mark", data, children);
+}
+
 export function mdxCode(data: IMdxData, children?: b.IBobrilChildren): b.IBobrilChildren {
     return htmlElement("code", data, children);
 }

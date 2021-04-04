@@ -14,6 +14,11 @@ export interface IMdxContext {
     Hr?: b.IComponentFactory<c.IMdxData>;
     Em?: b.IComponentFactory<c.IMdxData>;
     Strong?: b.IComponentFactory<c.IMdxData>;
+    Sub?: b.IComponentFactory<c.IMdxData>;
+    Sup?: b.IComponentFactory<c.IMdxData>;
+    Ins?: b.IComponentFactory<c.IMdxData>;
+    Del?: b.IComponentFactory<c.IMdxData>;
+    Mark?: b.IComponentFactory<c.IMdxData>;
     Code?: b.IComponentFactory<c.IMdxData>;
     Img?: b.IComponentFactory<c.IMdxImgData>;
     A?: b.IComponentFactory<c.IMdxAData>;
@@ -63,6 +68,26 @@ export const Em = (data: c.IMdxData, children?: b.IBobrilChildren) => {
 
 export const Strong = (data: c.IMdxData, children?: b.IBobrilChildren) => {
     return (b.useContext(mdxContext).Strong ?? c.mdxStrong)(data, children);
+};
+
+export const Sub = (data: c.IMdxData, children?: b.IBobrilChildren) => {
+    return (b.useContext(mdxContext).Sub ?? c.mdxSub)(data, children);
+};
+
+export const Sup = (data: c.IMdxData, children?: b.IBobrilChildren) => {
+    return (b.useContext(mdxContext).Sup ?? c.mdxSup)(data, children);
+};
+
+export const Ins = (data: c.IMdxData, children?: b.IBobrilChildren) => {
+    return (b.useContext(mdxContext).Ins ?? c.mdxIns)(data, children);
+};
+
+export const Del = (data: c.IMdxData, children?: b.IBobrilChildren) => {
+    return (b.useContext(mdxContext).Del ?? c.mdxDel)(data, children);
+};
+
+export const Mark = (data: c.IMdxData, children?: b.IBobrilChildren) => {
+    return (b.useContext(mdxContext).Mark ?? c.mdxMark)(data, children);
 };
 
 export const Code = (data: c.IMdxData, children?: b.IBobrilChildren) => {
