@@ -17,6 +17,7 @@ export interface IMdxContext {
     Code?: b.IComponentFactory<c.IMdxData>;
     Img?: b.IComponentFactory<c.IMdxImgData>;
     A?: b.IComponentFactory<c.IMdxAData>;
+    BlockQuote?: b.IComponentFactory<c.IMdxData>;
 }
 
 export const mdxContext = b.createContext<IMdxContext>({}, "mdx");
@@ -73,4 +74,8 @@ export const Img = (data: c.IMdxImgData, children?: b.IBobrilChildren) => {
 
 export const A = (data: c.IMdxAData, children?: b.IBobrilChildren) => {
     return (b.useContext(mdxContext).A ?? c.mdxA)(data, children);
+};
+
+export const BlockQuote = (data: c.IMdxData, children?: b.IBobrilChildren) => {
+    return (b.useContext(mdxContext).BlockQuote ?? c.mdxBlockQuote)(data, children);
 };

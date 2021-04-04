@@ -112,3 +112,7 @@ export function mdxA(data: IMdxAData, children?: b.IBobrilChildren): b.IBobrilCh
     }
     return res;
 }
+
+export function mdxBlockQuote(data: IMdxData, children?: b.IBobrilChildren): b.IBobrilChildren {
+    return htmlElement("blockquote", data, children);
+}
