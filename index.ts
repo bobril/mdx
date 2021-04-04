@@ -14,6 +14,7 @@ export interface IMdxContext {
     Hr?: b.IComponentFactory<c.IMdxData>;
     Em?: b.IComponentFactory<c.IMdxData>;
     Strong?: b.IComponentFactory<c.IMdxData>;
+    Code?: b.IComponentFactory<c.IMdxData>;
 }
 
 export const mdxContext = b.createContext<IMdxContext>({}, "mdx");
@@ -58,4 +59,8 @@ export const Em = (data: c.IMdxData, children?: b.IBobrilChildren) => {
 
 export const Strong = (data: c.IMdxData, children?: b.IBobrilChildren) => {
     return (b.useContext(mdxContext).Strong ?? c.mdxStrong)(data, children);
+};
+
+export const Code = (data: c.IMdxData, children?: b.IBobrilChildren) => {
+    return (b.useContext(mdxContext).Code ?? c.mdxCode)(data, children);
 };

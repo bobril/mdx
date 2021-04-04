@@ -74,3 +74,7 @@ export function mdxEm(data: IMdxData, children?: b.IBobrilChildren): b.IBobrilCh
 export function mdxStrong(data: IMdxData, children?: b.IBobrilChildren): b.IBobrilChildren {
     return htmlElement("strong", data, children);
 }
+
+export function mdxCode(data: IMdxData, children?: b.IBobrilChildren): b.IBobrilChildren {
+    return htmlElement("code", data, children);
+}
