@@ -10,6 +10,8 @@ export interface IMdxContext {
     Ol?: b.IComponentFactory<c.IMdxOrderedListData>;
     Li?: b.IComponentFactory<c.IMdxData>;
     Br?: b.IBobrilChildren;
+    CodeBlock?: b.IComponentFactory<c.IMdxCodeData>;
+    Hr?: b.IComponentFactory<c.IMdxData>;
 }
 
 export const mdxContext = b.createContext<IMdxContext>({}, "mdx");
@@ -39,3 +41,11 @@ const brNode: b.IBobrilNode = { tag: "br" };
 export function Br() {
     return b.useContext(mdxContext).Br ?? brNode;
 }
+
+export const CodeBlock = (data: c.IMdxCodeData, children?: b.IBobrilChildren) => {
+    return (b.useContext(mdxContext).CodeBlock ?? c.mdxCodeBlock)(data, children);
+};
+
+export const Hr = (data: c.IMdxData, children?: b.IBobrilChildren) => {
+    return (b.useContext(mdxContext).Hr ?? c.mdxHr)(data, children);
+};

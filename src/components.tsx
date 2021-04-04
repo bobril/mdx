@@ -53,3 +53,16 @@ export function mdxOl(data: IMdxOrderedListData, children?: b.IBobrilChildren): 
 export function mdxLi(data: IMdxData, children?: b.IBobrilChildren): b.IBobrilChildren {
     return htmlElement("li", data, children);
 }
+
+export interface IMdxCodeData extends IMdxData {
+    info?: string;
+    args?: string;
+}
+
+export function mdxCodeBlock(data: IMdxCodeData, children?: b.IBobrilChildren): b.IBobrilChildren {
+    return { tag: "pre", children: htmlElement("code", data, children) };
+}
+
+export function mdxHr(data: IMdxData, children?: b.IBobrilChildren): b.IBobrilChildren {
+    return htmlElement("hr", data, children);
+}
