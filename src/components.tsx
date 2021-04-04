@@ -66,3 +66,11 @@ export function mdxCodeBlock(data: IMdxCodeData, children?: b.IBobrilChildren): 
 export function mdxHr(data: IMdxData, children?: b.IBobrilChildren): b.IBobrilChildren {
     return htmlElement("hr", data, children);
 }
+
+export function mdxEm(data: IMdxData, children?: b.IBobrilChildren): b.IBobrilChildren {
+    return htmlElement("em", data, children);
+}
+
+export function mdxStrong(data: IMdxData, children?: b.IBobrilChildren): b.IBobrilChildren {
+    return htmlElement("strong", data, children);
+}
