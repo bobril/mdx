@@ -147,3 +147,59 @@ export function mdxAbbr(data: IMdxAbbrData, children?: b.IBobrilChildren): b.IBo
     else res.attrs["title"] = data.title;
     return res;
 }
+
+export function mdxTable(data: IMdxData, children?: b.IBobrilChildren): b.IBobrilChildren {
+    return htmlElement("table", data, children);
+}
+
+export function mdxThead(data: IMdxData, children?: b.IBobrilChildren): b.IBobrilChildren {
+    return htmlElement("thead", data, children);
+}
+
+export function mdxTbody(data: IMdxData, children?: b.IBobrilChildren): b.IBobrilChildren {
+    return htmlElement("tbody", data, children);
+}
+
+export interface IMdxColData extends IMdxData {
+    width: string;
+}
+
+export function mdxCol(data: IMdxColData, children?: b.IBobrilChildren): b.IBobrilChildren {
+    var res = htmlElement("col", data, children);
+    b.style(res, { width: data.width });
+    return res;
+}
+
+export function mdxTr(data: IMdxData, children?: b.IBobrilChildren): b.IBobrilChildren {
+    return htmlElement("tr", data, children);
+}
+
+export interface IMdxTdData extends IMdxData {
+    align?: "left" | "center" | "right";
+    colspan?: number;
+    rowspan?: number;
+}
+
+function applyTdData(data: IMdxTdData, res: b.IBobrilNode) {
+    if (data.align) b.style(res, { textAlign: data.align });
+    if (data.colspan) {
+        if (res.attrs == undefined) res.attrs = { colspan: data.colspan };
+        else res.attrs["colspan"] = data.colspan;
+    }
+    if (data.rowspan) {
+        if (res.attrs == undefined) res.attrs = { rowspan: data.rowspan };
+        else res.attrs["rowspan"] = data.rowspan;
+    }
+}
+
+export function mdxTh(data: IMdxTdData, children?: b.IBobrilChildren): b.IBobrilChildren {
+    var res = htmlElement("th", data, children);
+    applyTdData(data, res);
+    return res;
+}
+
+export function mdxTd(data: IMdxTdData, children?: b.IBobrilChildren): b.IBobrilChildren {
+    var res = htmlElement("td", data, children);
+    applyTdData(data, res);
+    return res;
+}

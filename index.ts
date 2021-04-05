@@ -24,6 +24,13 @@ export interface IMdxContext {
     A?: b.IComponentFactory<c.IMdxAData>;
     BlockQuote?: b.IComponentFactory<c.IMdxData>;
     Abbr?: b.IComponentFactory<c.IMdxAbbrData>;
+    Table?: b.IComponentFactory<c.IMdxData>;
+    Thead?: b.IComponentFactory<c.IMdxData>;
+    Tbody?: b.IComponentFactory<c.IMdxData>;
+    Col?: b.IComponentFactory<c.IMdxColData>;
+    Tr?: b.IComponentFactory<c.IMdxData>;
+    Th?: b.IComponentFactory<c.IMdxTdData>;
+    Td?: b.IComponentFactory<c.IMdxTdData>;
 }
 
 export const mdxContext = b.createContext<IMdxContext>({}, "mdx");
@@ -108,4 +115,32 @@ export const BlockQuote = (data: c.IMdxData, children?: b.IBobrilChildren) => {
 
 export const Abbr = (data: c.IMdxAbbrData, children?: b.IBobrilChildren) => {
     return (b.useContext(mdxContext).Abbr ?? c.mdxAbbr)(data, children);
+};
+
+export const Table = (data: c.IMdxData, children?: b.IBobrilChildren) => {
+    return (b.useContext(mdxContext).Table ?? c.mdxTable)(data, children);
+};
+
+export const Thead = (data: c.IMdxData, children?: b.IBobrilChildren) => {
+    return (b.useContext(mdxContext).Thead ?? c.mdxThead)(data, children);
+};
+
+export const Tbody = (data: c.IMdxData, children?: b.IBobrilChildren) => {
+    return (b.useContext(mdxContext).Tbody ?? c.mdxTbody)(data, children);
+};
+
+export const Col = (data: c.IMdxColData, children?: b.IBobrilChildren) => {
+    return (b.useContext(mdxContext).Col ?? c.mdxCol)(data, children);
+};
+
+export const Tr = (data: c.IMdxData, children?: b.IBobrilChildren) => {
+    return (b.useContext(mdxContext).Tr ?? c.mdxTr)(data, children);
+};
+
+export const Th = (data: c.IMdxTdData, children?: b.IBobrilChildren) => {
+    return (b.useContext(mdxContext).Th ?? c.mdxTh)(data, children);
+};
+
+export const Td = (data: c.IMdxTdData, children?: b.IBobrilChildren) => {
+    return (b.useContext(mdxContext).Td ?? c.mdxTd)(data, children);
 };
