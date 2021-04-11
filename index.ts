@@ -31,6 +31,9 @@ export interface IMdxContext {
     Tr?: b.IComponentFactory<c.IMdxData>;
     Th?: b.IComponentFactory<c.IMdxTdData>;
     Td?: b.IComponentFactory<c.IMdxTdData>;
+    Dl?: b.IComponentFactory<c.IMdxData>;
+    Dt?: b.IComponentFactory<c.IMdxData>;
+    Dd?: b.IComponentFactory<c.IMdxData>;
 }
 
 export const mdxContext = b.createContext<IMdxContext>({}, "mdx");
@@ -143,4 +146,16 @@ export const Th = (data?: c.IMdxTdData, children?: b.IBobrilChildren) => {
 
 export const Td = (data?: c.IMdxTdData, children?: b.IBobrilChildren) => {
     return (b.useContext(mdxContext).Td ?? c.mdxTd)(data, children);
+};
+
+export const Dl = (data?: c.IMdxData, children?: b.IBobrilChildren) => {
+    return (b.useContext(mdxContext).Dl ?? c.mdxDl)(data, children);
+};
+
+export const Dt = (data?: c.IMdxData, children?: b.IBobrilChildren) => {
+    return (b.useContext(mdxContext).Dt ?? c.mdxDt)(data, children);
+};
+
+export const Dd = (data?: c.IMdxData, children?: b.IBobrilChildren) => {
+    return (b.useContext(mdxContext).Dd ?? c.mdxDd)(data, children);
 };

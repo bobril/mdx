@@ -207,3 +207,15 @@ export function mdxTd(data?: IMdxTdData, children?: b.IBobrilChildren): b.IBobri
     applyTdData(res, data);
     return res;
 }
+
+export function mdxDl(data?: IMdxData, children?: b.IBobrilChildren): b.IBobrilChildren {
+    return htmlElement("dl", data, children);
+}
+
+export function mdxDt(data?: IMdxData, children?: b.IBobrilChildren): b.IBobrilChildren {
+    return htmlElement("dt", data, children);
+}
+
+export function mdxDd(data?: IMdxData, children?: b.IBobrilChildren): b.IBobrilChildren {
+    return htmlElement("dd", data, children);
+}
