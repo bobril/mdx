@@ -231,3 +231,17 @@ export function mdxFooter(data?: IMdxData, children?: b.IBobrilChildren): b.IBob
 export function mdxCite(data?: IMdxData, children?: b.IBobrilChildren): b.IBobrilChildren {
     return htmlElement("cite", data, children);
 }
+
+export interface IMdxTaskData extends IMdxData {
+    done: boolean;
+}
+
+export function mdxTask(data?: IMdxTaskData, children?: b.IBobrilChildren): b.IBobrilChildren {
+    if (data == undefined) return undefined;
+    var res = htmlElement("input", data, children);
+    if (res.attrs == undefined) res.attrs = {};
+    res.attrs["type"] = "checkbox";
+    res.attrs["disabled"] = true;
+    res.attrs["checked"] = data.done;
+    return res;
+}
