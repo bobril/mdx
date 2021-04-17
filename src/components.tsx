@@ -219,3 +219,7 @@ export function mdxDt(data?: IMdxData, children?: b.IBobrilChildren): b.IBobrilC
 export function mdxDd(data?: IMdxData, children?: b.IBobrilChildren): b.IBobrilChildren {
     return htmlElement("dd", data, children);
 }
+
+export function mdxFixcaption(data?: IMdxData, children?: b.IBobrilChildren): b.IBobrilChildren {
+    return htmlElement("figcaption", data, children);
+}
