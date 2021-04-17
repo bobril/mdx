@@ -227,3 +227,7 @@ export function mdxFixcaption(data?: IMdxData, children?: b.IBobrilChildren): b.
 export function mdxFooter(data?: IMdxData, children?: b.IBobrilChildren): b.IBobrilChildren {
     return htmlElement("footer", data, children);
 }
+
+export function mdxCite(data?: IMdxData, children?: b.IBobrilChildren): b.IBobrilChildren {
+    return htmlElement("cite", data, children);
+}
