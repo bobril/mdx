@@ -9,7 +9,7 @@ export interface IMdxContext {
     Ul?: b.IComponentFactory<c.IMdxData>;
     Ol?: b.IComponentFactory<c.IMdxOrderedListData>;
     Li?: b.IComponentFactory<c.IMdxData>;
-    Br?: b.IBobrilChildren;
+    Br?: b.IBobrilNode;
     CodeBlock?: b.IComponentFactory<c.IMdxCodeData>;
     Hr?: b.IComponentFactory<c.IMdxData>;
     Em?: b.IComponentFactory<c.IMdxData>;
@@ -42,140 +42,140 @@ export interface IMdxContext {
 
 export const mdxContext = b.createContext<IMdxContext>({}, "mdx");
 
-export const P = (data?: c.IMdxData, children?: b.IBobrilChildren) => {
+export const P = (data?: c.IMdxData, children?: b.IBobrilChildren): b.IBobrilNode => {
     return (b.useContext(mdxContext).P ?? c.mdxP)(data, children);
 };
 
-export const H = (data?: c.IMdxHeadingData, children?: b.IBobrilChildren) => {
+export const H = (data?: c.IMdxHeadingData, children?: b.IBobrilChildren): b.IBobrilNode => {
     return (b.useContext(mdxContext).H ?? c.mdxH)(data, children);
 };
 
-export const Ul = (data?: c.IMdxData, children?: b.IBobrilChildren) => {
+export const Ul = (data?: c.IMdxData, children?: b.IBobrilChildren): b.IBobrilNode => {
     return (b.useContext(mdxContext).Ul ?? c.mdxUl)(data, children);
 };
 
-export const Ol = (data?: c.IMdxOrderedListData, children?: b.IBobrilChildren) => {
+export const Ol = (data?: c.IMdxOrderedListData, children?: b.IBobrilChildren): b.IBobrilNode => {
     return (b.useContext(mdxContext).Ol ?? c.mdxOl)(data, children);
 };
 
-export const Li = (data?: c.IMdxData, children?: b.IBobrilChildren) => {
+export const Li = (data?: c.IMdxData, children?: b.IBobrilChildren): b.IBobrilNode => {
     return (b.useContext(mdxContext).Li ?? c.mdxLi)(data, children);
 };
 
 const brNode: b.IBobrilNode = { tag: "br" };
 
-export function Br() {
+export function Br(): b.IBobrilNode {
     return b.useContext(mdxContext).Br ?? brNode;
 }
 
-export const CodeBlock = (data?: c.IMdxCodeData, children?: b.IBobrilChildren) => {
+export const CodeBlock = (data?: c.IMdxCodeData, children?: b.IBobrilChildren): b.IBobrilNode => {
     return (b.useContext(mdxContext).CodeBlock ?? c.mdxCodeBlock)(data, children);
 };
 
-export const Hr = (data?: c.IMdxData, children?: b.IBobrilChildren) => {
+export const Hr = (data?: c.IMdxData, children?: b.IBobrilChildren): b.IBobrilNode => {
     return (b.useContext(mdxContext).Hr ?? c.mdxHr)(data, children);
 };
 
-export const Em = (data?: c.IMdxData, children?: b.IBobrilChildren) => {
+export const Em = (data?: c.IMdxData, children?: b.IBobrilChildren): b.IBobrilNode => {
     return (b.useContext(mdxContext).Em ?? c.mdxEm)(data, children);
 };
 
-export const Strong = (data?: c.IMdxData, children?: b.IBobrilChildren) => {
+export const Strong = (data?: c.IMdxData, children?: b.IBobrilChildren): b.IBobrilNode => {
     return (b.useContext(mdxContext).Strong ?? c.mdxStrong)(data, children);
 };
 
-export const Sub = (data?: c.IMdxData, children?: b.IBobrilChildren) => {
+export const Sub = (data?: c.IMdxData, children?: b.IBobrilChildren): b.IBobrilNode => {
     return (b.useContext(mdxContext).Sub ?? c.mdxSub)(data, children);
 };
 
-export const Sup = (data?: c.IMdxData, children?: b.IBobrilChildren) => {
+export const Sup = (data?: c.IMdxData, children?: b.IBobrilChildren): b.IBobrilNode => {
     return (b.useContext(mdxContext).Sup ?? c.mdxSup)(data, children);
 };
 
-export const Ins = (data?: c.IMdxData, children?: b.IBobrilChildren) => {
+export const Ins = (data?: c.IMdxData, children?: b.IBobrilChildren): b.IBobrilNode => {
     return (b.useContext(mdxContext).Ins ?? c.mdxIns)(data, children);
 };
 
-export const Del = (data?: c.IMdxData, children?: b.IBobrilChildren) => {
+export const Del = (data?: c.IMdxData, children?: b.IBobrilChildren): b.IBobrilNode => {
     return (b.useContext(mdxContext).Del ?? c.mdxDel)(data, children);
 };
 
-export const Mark = (data?: c.IMdxData, children?: b.IBobrilChildren) => {
+export const Mark = (data?: c.IMdxData, children?: b.IBobrilChildren): b.IBobrilNode => {
     return (b.useContext(mdxContext).Mark ?? c.mdxMark)(data, children);
 };
 
-export const Code = (data?: c.IMdxData, children?: b.IBobrilChildren) => {
+export const Code = (data?: c.IMdxData, children?: b.IBobrilChildren): b.IBobrilNode => {
     return (b.useContext(mdxContext).Code ?? c.mdxCode)(data, children);
 };
 
-export const Img = (data?: c.IMdxImgData, children?: b.IBobrilChildren) => {
+export const Img = (data?: c.IMdxImgData, children?: b.IBobrilChildren): b.IBobrilNode => {
     return (b.useContext(mdxContext).Img ?? c.mdxImg)(data, children);
 };
 
-export const A = (data?: c.IMdxAData, children?: b.IBobrilChildren) => {
+export const A = (data?: c.IMdxAData, children?: b.IBobrilChildren): b.IBobrilNode => {
     return (b.useContext(mdxContext).A ?? c.mdxA)(data, children);
 };
 
-export const BlockQuote = (data?: c.IMdxData, children?: b.IBobrilChildren) => {
+export const BlockQuote = (data?: c.IMdxData, children?: b.IBobrilChildren): b.IBobrilNode => {
     return (b.useContext(mdxContext).BlockQuote ?? c.mdxBlockQuote)(data, children);
 };
 
-export const Abbr = (data?: c.IMdxAbbrData, children?: b.IBobrilChildren) => {
+export const Abbr = (data?: c.IMdxAbbrData, children?: b.IBobrilChildren): b.IBobrilNode => {
     return (b.useContext(mdxContext).Abbr ?? c.mdxAbbr)(data, children);
 };
 
-export const Table = (data?: c.IMdxData, children?: b.IBobrilChildren) => {
+export const Table = (data?: c.IMdxData, children?: b.IBobrilChildren): b.IBobrilNode => {
     return (b.useContext(mdxContext).Table ?? c.mdxTable)(data, children);
 };
 
-export const Thead = (data?: c.IMdxData, children?: b.IBobrilChildren) => {
+export const Thead = (data?: c.IMdxData, children?: b.IBobrilChildren): b.IBobrilNode => {
     return (b.useContext(mdxContext).Thead ?? c.mdxThead)(data, children);
 };
 
-export const Tbody = (data?: c.IMdxData, children?: b.IBobrilChildren) => {
+export const Tbody = (data?: c.IMdxData, children?: b.IBobrilChildren): b.IBobrilNode => {
     return (b.useContext(mdxContext).Tbody ?? c.mdxTbody)(data, children);
 };
 
-export const Col = (data?: c.IMdxColData, children?: b.IBobrilChildren) => {
+export const Col = (data?: c.IMdxColData, children?: b.IBobrilChildren): b.IBobrilNode => {
     return (b.useContext(mdxContext).Col ?? c.mdxCol)(data, children);
 };
 
-export const Tr = (data?: c.IMdxData, children?: b.IBobrilChildren) => {
+export const Tr = (data?: c.IMdxData, children?: b.IBobrilChildren): b.IBobrilNode => {
     return (b.useContext(mdxContext).Tr ?? c.mdxTr)(data, children);
 };
 
-export const Th = (data?: c.IMdxTdData, children?: b.IBobrilChildren) => {
+export const Th = (data?: c.IMdxTdData, children?: b.IBobrilChildren): b.IBobrilNode => {
     return (b.useContext(mdxContext).Th ?? c.mdxTh)(data, children);
 };
 
-export const Td = (data?: c.IMdxTdData, children?: b.IBobrilChildren) => {
+export const Td = (data?: c.IMdxTdData, children?: b.IBobrilChildren): b.IBobrilNode => {
     return (b.useContext(mdxContext).Td ?? c.mdxTd)(data, children);
 };
 
-export const Dl = (data?: c.IMdxData, children?: b.IBobrilChildren) => {
+export const Dl = (data?: c.IMdxData, children?: b.IBobrilChildren): b.IBobrilNode => {
     return (b.useContext(mdxContext).Dl ?? c.mdxDl)(data, children);
 };
 
-export const Dt = (data?: c.IMdxData, children?: b.IBobrilChildren) => {
+export const Dt = (data?: c.IMdxData, children?: b.IBobrilChildren): b.IBobrilNode => {
     return (b.useContext(mdxContext).Dt ?? c.mdxDt)(data, children);
 };
 
-export const Dd = (data?: c.IMdxData, children?: b.IBobrilChildren) => {
+export const Dd = (data?: c.IMdxData, children?: b.IBobrilChildren): b.IBobrilNode => {
     return (b.useContext(mdxContext).Dd ?? c.mdxDd)(data, children);
 };
 
-export const Figcaption = (data?: c.IMdxData, children?: b.IBobrilChildren) => {
+export const Figcaption = (data?: c.IMdxData, children?: b.IBobrilChildren): b.IBobrilNode => {
     return (b.useContext(mdxContext).Figcaption ?? c.mdxFixcaption)(data, children);
 };
 
-export const Footer = (data?: c.IMdxData, children?: b.IBobrilChildren) => {
+export const Footer = (data?: c.IMdxData, children?: b.IBobrilChildren): b.IBobrilNode => {
     return (b.useContext(mdxContext).Footer ?? c.mdxFooter)(data, children);
 };
 
-export const Cite = (data?: c.IMdxData, children?: b.IBobrilChildren) => {
+export const Cite = (data?: c.IMdxData, children?: b.IBobrilChildren): b.IBobrilNode => {
     return (b.useContext(mdxContext).Cite ?? c.mdxCite)(data, children);
 };
 
-export const Task = (data?: c.IMdxTaskData, children?: b.IBobrilChildren) => {
+export const Task = (data?: c.IMdxTaskData, children?: b.IBobrilChildren): b.IBobrilNode => {
     return (b.useContext(mdxContext).Task ?? c.mdxTask)(data, children);
 };
