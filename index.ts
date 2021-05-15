@@ -40,7 +40,9 @@ export interface IMdxContext {
     Task?: b.IComponentFactory<c.IMdxTaskData>;
 }
 
-export const mdxContext = b.createContext<IMdxContext>({}, "mdx");
+export let defaultComponents: IMdxContext = {};
+
+export const mdxContext = b.createContext<IMdxContext>(defaultComponents, "mdx");
 
 export const P = (data?: c.IMdxData, children?: b.IBobrilChildren): b.IBobrilNode => {
     return (b.useContext(mdxContext).P ?? c.mdxP)(data, children);
