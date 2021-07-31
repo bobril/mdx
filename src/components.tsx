@@ -220,7 +220,11 @@ export function mdxDd(data?: IMdxData, children?: b.IBobrilChildren): b.IBobrilN
     return htmlElement("dd", data, children);
 }
 
-export function mdxFixcaption(data?: IMdxData, children?: b.IBobrilChildren): b.IBobrilNode {
+export function mdxFigure(data?: IMdxData, children?: b.IBobrilChildren): b.IBobrilNode {
+    return htmlElement("figure", data, children);
+}
+
+export function mdxFigcaption(data?: IMdxData, children?: b.IBobrilChildren): b.IBobrilNode {
     return htmlElement("figcaption", data, children);
 }
 
