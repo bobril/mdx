@@ -124,11 +124,14 @@ export interface IMdxAData extends IMdxData {
     title?: string;
 }
 
+const linkWithXssRegExp = /^\s*javascript:.+$/gi;
+
 export function mdxA(data?: IMdxAData, children?: b.IBobrilChildren): b.IBobrilNode {
     if (data == undefined) return undefined!;
     var res = htmlElement("a", data, children);
-    if (res.attrs == undefined) res.attrs = { href: data.href };
-    else res.attrs["href"] = data.href;
+    var sanitizedHref = data.href.replace(linkWithXssRegExp, "javascript:void(0)");
+    if (res.attrs == undefined) res.attrs = { href: sanitizedHref };
+    else res.attrs["href"] = sanitizedHref;
     if (data.title) {
         res.attrs["title"] = data.title;
     }
