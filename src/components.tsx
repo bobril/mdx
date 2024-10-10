@@ -25,7 +25,7 @@ export interface IMdxHeadingData extends IMdxData {
 }
 
 export function mdxH(data?: IMdxHeadingData, children?: b.IBobrilChildren): b.IBobrilNode {
-    return htmlElement("h" + data?.level ?? 1, data, children);
+    return htmlElement("h" + (data?.level ?? 1), data, children);
 }
 
 export function mdxUl(data?: IMdxData, children?: b.IBobrilChildren): b.IBobrilNode {
