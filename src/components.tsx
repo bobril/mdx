@@ -122,6 +122,7 @@ export function mdxImg(data?: IMdxImgData, children?: b.IBobrilChildren): b.IBob
 export interface IMdxAData extends IMdxData {
     href: string;
     title?: string;
+    target?: string;
 }
 
 const linkWithXssRegExp = /^\s*javascript:.+$/gi;
@@ -134,6 +135,9 @@ export function mdxA(data?: IMdxAData, children?: b.IBobrilChildren): b.IBobrilN
     else res.attrs["href"] = sanitizedHref;
     if (data.title) {
         res.attrs["title"] = data.title;
+    }
+    if (data.target) {
+        res.attrs["target"] = data.target;
     }
     return res;
 }

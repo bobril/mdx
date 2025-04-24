@@ -13,6 +13,11 @@ b.init(() => (
             {"Author "}
             <mdx.A href="mailto:boris.letocha@gmail.com">{"boris.letocha@gmail.com"}</mdx.A>
         </mdx.P>
+        <mdx.P>
+            <mdx.A href="https://bobril.com" target="_blank">
+                bobril.com
+            </mdx.A>
+        </mdx.P>
         <mdx.Ol>
             <mdx.Li>{"agggg"}</mdx.Li>
             <mdx.Li>{"dfgsdhf"}</mdx.Li>
