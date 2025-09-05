@@ -1,10 +1,12 @@
 import * as b from "bobril";
-import * as mdxCodeBlock from "./highlighter";
+import * as mdxSyntaxHighlighter from "./highlighter";
 import * as styles from "@bobril/highlighter/styles";
-
-mdxCodeBlock.setDefaultCodeBlock(styles.docco);
-
+import { install } from "./mermaid.tsx";
 import * as mdx from "./index";
+
+mdxSyntaxHighlighter.setDefaultCodeBlock(styles.docco);
+
+install();
 
 b.init(() => (
     <>
@@ -56,5 +58,12 @@ b.init(() => (
                 </mdx.Tr>
             </mdx.Tbody>
         </mdx.Table>
+        <mdx.CodeBlock info="mermaid">
+            {`graph TD;
+            A-->B;
+            A-->C;
+            B-->D;
+            C-->D;`}
+        </mdx.CodeBlock>
     </>
 ));
