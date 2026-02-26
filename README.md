@@ -2,6 +2,10 @@
 
 Helper library of components for mdx in Bobril-build
 
+## Example
+
+Live example: [https://bobril.com/mdx/](https://bobril.com/mdx/)
+
 ## Change log
 
 ### 2.0.0
