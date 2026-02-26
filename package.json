@@ -1,6 +1,6 @@
 {
     "name": "@bobril/mdx",
-    "version": "1.2.0",
+    "version": "2.0.0",
     "description": "Default components for Bobril Mdx (*.mdxb)",
     "main": "index.ts",
     "repository": {
@@ -23,7 +23,6 @@
     "homepage": "https://github.com/bobril/mdx#readme",
     "dependencies": {
         "@bobril/highlighter": "*",
-        "@bobril/mermaid": "*",
         "bobril": "*"
     }
 }

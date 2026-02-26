@@ -4,6 +4,11 @@ Helper library of components for mdx in Bobril-build
 
 ## Change log
 
+### 2.0.0
+
+-   Removed built-in Mermaid integration from `@bobril/mdx`.
+-   Mermaid integration moved to `@bobril/mdx-mermaid`.
+
 ### 1.2.0
 
 -   Added optional support for mermaid diagrams
@@ -27,10 +32,16 @@ mdxCodeBlock.setDefaultCodeBlock(styles.docco);
 
 ### Mermaid diagrams
 
-It should be combined with `@bobril/highlighter` by installing it after highlighter. Add `@bobril/mermaid` to dependencies if you want to customize options for mermaid.
+Mermaid support is now provided by `@bobril/mdx-mermaid`.
+
+Migration:
+-   old import: `@bobril/mdx/mermaid.tsx`
+-   new import: `@bobril/mdx-mermaid`
+
+It should be combined with `@bobril/highlighter` by installing Mermaid support after highlighter.
 
 ```ts
-import { install } from "@bobril/mdx/mermaid.tsx";
+import { install } from "@bobril/mdx-mermaid";
 
 install();
 
